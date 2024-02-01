@@ -35,39 +35,97 @@ public class checkoutProcess {
 	      
 	      WebElement ClickNext = driver.findElement(By.xpath("//span[contains(text(),'Next')]"));
 		  ClickNext.click();
-		  Thread.sleep(2000);
+		  Thread.sleep(3000);
 		  
 		  WebElement PassIn = driver.findElement(By.xpath("//body/div[1]/div[1]/div[2]/div[1]/c-wiz[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/span[1]/section[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]"));
 	      PassIn.sendKeys("123qwe!@#QWE");
-	      Thread.sleep(2000);
+	      Thread.sleep(3000);
 	      
 	      WebElement ClickNext2 = driver.findElement(By.xpath("//span[contains(text(),'Next')]"));
 		  ClickNext2.click();
-		  Thread.sleep(2000);
+		  Thread.sleep(3000);
 	      
 	      //hover "lekhok"
 		  Actions action = new Actions(driver);
 		  WebElement HoverLekhok = driver.findElement(By.xpath("//a[@id='js--authors']"));
 		  action.moveToElement(HoverLekhok).perform();
-		  Thread.sleep(2000);
+		  Thread.sleep(4000);
 		  
 		  //select "Humayun ahmed"
 		  WebElement ClickHumayun = driver.findElement(By.xpath("//a[contains(text(),'হুমায়ূন আহমেদ')]"));
 		  ClickHumayun.click();
-		  Thread.sleep(2000);
+		  Thread.sleep(4000);
 		  
 		  //scroll down
 		  
 		  JavascriptExecutor js = (JavascriptExecutor) driver;
-		  WebElement ClickShomokalin = driver.findElement(By.xpath("//label[contains(text(),'সমকালীন উপন্যাস')]"));
-		  js.executeScript("arguments[0].scrollIntoView()", ClickShomokalin);
-		  //js.executeScript("window.scrollBy(0,2)" );		  
-		  //Thread.sleep(2000);
+		  
+		  js.executeScript("window.scrollBy(0,500)" );
+		  Thread.sleep(3000);
 		  
 		  //select "somokalin uponnash"
-		  //WebElement ClickShomokalin = driver.findElement(By.xpath("//label[contains(text(),'সমকালীন উপন্যাস')]"));
-		  ClickShomokalin.click();
-		  Thread.sleep(2000);
+		  
+		  WebElement ClickShomokalin = driver.findElement(By.xpath("//label[contains(text(),'সমকালীন উপন্যাস')]"));
+		  ClickShomokalin.click();  		  
+		  Thread.sleep(4000);
+		  
+		  //scroll down
+		  
+		  js.executeScript("window.scrollBy(0,500)" );
+		  Thread.sleep(3000);
+		 
+		  
+		  //select "rochona"
+		  
+		  WebElement ClickRochona = driver.findElement(By.xpath("//label[contains(text(),'রচনা সংকলন ও সমগ্র')]"));
+		  ClickRochona.click();
+		  Thread.sleep(4000);
+		  
+		  //scroll down
+		  
+		  WebElement Find = driver.findElement(By.xpath("//body/div[7]/div[1]/div[1]/div[1]/section[3]/div[2]/div[1]/div[59]/div[1]/a[1]/div[1]/img[1]"));
+		  js.executeScript("arguments[0].scrollIntoView()", Find);
+		  Thread.sleep(4000);
+		  
+		  //goto next page
+		  
+		  WebElement ClickNextPage = driver.findElement(By.xpath("//body/div[7]/div[1]/div[1]/div[1]/section[3]/div[3]/a[1]"));
+		  ClickNextPage.click();
+		  Thread.sleep(4000);
+		  
+		  //scroll down
+		  
+		  js.executeScript("window.scrollBy(0,500)" );
+		  Thread.sleep(3000);
+		  
+		  //add a book to cart
+		  
+		  WebElement HoverBook = driver.findElement(By.xpath("//h4[contains(text(),'জল জোছনা')]"));
+		  action.moveToElement(HoverBook).perform();
+		  Thread.sleep(4000);	
+		  
+		  //select add to cart
+		  
+		  WebElement ClickAddToCart = driver.findElement(By.xpath("//body/div[7]/div[1]/div[1]/div[1]/section[3]/div[2]/div[1]/div[1]/div[1]/a[1]/div[1]/div[3]/button[1]"));
+		  ClickAddToCart.click();
+		  Thread.sleep(4000);
+		  
+		  //click cart icon
+		  WebElement ClickCart = driver.findElement(By.xpath("//body/div[7]/section[1]/div[1]/a[1]/div[1]/img[1]"));
+		  ClickCart.click();
+		  Thread.sleep(4000);
+		  
+		  //click place order
+		  WebElement ClickOrder = driver.findElement(By.xpath("//a[@id='js-continue-to-shipping']"));
+		  ClickOrder.click();
+		  Thread.sleep(4000);
+		
+		  
+		  
+		
+		
+		  
+		  
 		  
 		  
 	      
