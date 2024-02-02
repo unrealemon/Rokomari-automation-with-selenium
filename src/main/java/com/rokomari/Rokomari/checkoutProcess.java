@@ -100,9 +100,9 @@ public class checkoutProcess {
 		  
 		  //add a book to cart
 		  
-		  WebElement HoverBook = driver.findElement(By.xpath("//h4[contains(text(),'জল জোছনা')]"));
+		  WebElement HoverBook = driver.findElement(By.xpath("//h4[contains(text(),'সাজঘর')]"));
 		  action.moveToElement(HoverBook).perform();
-		  Thread.sleep(4000);	
+		  Thread.sleep(2000);	
 		  
 		  //select add to cart
 		  
@@ -120,7 +120,80 @@ public class checkoutProcess {
 		  ClickOrder.click();
 		  Thread.sleep(4000);
 		
+		  //add information
+		  //clear name field
+		  driver.findElement(By.xpath("//body/div[@id='shipping-payment']/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[2]/fieldset[1]/input[1]")).clear();
+		  Thread.sleep(2000);
 		  
+		  //input name
+		  
+		  WebElement NameIn = driver.findElement(By.xpath("//body/div[@id='shipping-payment']/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[2]/fieldset[1]/input[1]"));
+	      NameIn.sendKeys("Emon Ali");
+	      Thread.sleep(2000);
+		  
+	      //input number
+	      WebElement PhoneIn = driver.findElement(By.xpath("//body/div[@id='shipping-payment']/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/input[1]"));
+	      PhoneIn.sendKeys("01123456789");
+	      Thread.sleep(2000);
+
+		  //select city
+	      
+	      WebElement CityIn = driver.findElement(By.xpath("//select[@id='js--city']"));
+	      CityIn.click();
+	      Thread.sleep(2000);
+	      
+	      WebElement CityIn2 = driver.findElement(By.xpath("//option[contains(text(),'ঢাকা')]"));
+	      CityIn2.click();
+	      Thread.sleep(2000);
+	      
+	      //select area
+	      WebElement AreaIn = driver.findElement(By.xpath("//select[@id='js--area']"));
+	      AreaIn.click();
+	      Thread.sleep(2000);
+	      
+	      WebElement AreaIn2 = driver.findElement(By.xpath("//option[contains(text(),'আদাবর')]"));
+	      AreaIn2.click();
+	      Thread.sleep(2000);
+	      
+	      //address input
+	      WebElement AddressIn = driver.findElement(By.xpath("//body/div[@id='shipping-payment']/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[2]/fieldset[2]/textarea[1]"));
+	      AddressIn.click();
+	      Thread.sleep(3000);
+	      
+	      //scroll down
+	      js.executeScript("window.scrollBy(0,250)" );
+		  Thread.sleep(3000);
+
+	      
+	      WebElement AddressIn2 = driver.findElement(By.xpath("//body/div[@id='shipping-payment']/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[2]/fieldset[2]/textarea[1]"));
+	      AddressIn2.sendKeys("PC Culture Housing, Shyamoli");
+	      Thread.sleep(2000);      
+	      
+	      //scroll down
+	      js.executeScript("window.scrollBy(0,document.body.scrollHeight)" );
+		  Thread.sleep(3000);
+		  
+		  //sign out
+		  WebElement SignOut = driver.findElement(By.xpath("//a[@id='dropdownMenu2']"));
+	      SignOut.click();
+	      Thread.sleep(2000);
+	      
+	      WebElement SignOut2 = driver.findElement(By.xpath("//a[contains(text(),'Sign Out')]"));
+	      SignOut2.click();
+	      Thread.sleep(2000);
+	      
+	      driver.close();
+	      
+	      
+
+	      
+	      
+	      
+
+	 
+	      
+	      
+	      
 		  
 		
 		
